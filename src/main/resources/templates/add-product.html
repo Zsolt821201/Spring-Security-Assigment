@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head><title>Add a Product</title></head>
+<body>
+
+
+<form th:action="@{/products/add}" th:object="${product}" method="post">
+  <table>
+    <tr>
+      <td>Code</td>
+      <td><input type="text" th:field="*{code}" name="title"/></td>
+      <td style="color:red"><span th:if="${#fields.hasErrors('code')}" th:errors="*{code}" /></td>
+    </tr>
+    <tr>
+      <td>Name</td>
+      <td><input type="text" th:field="*{name}" name="title"/></td>
+      <td style="color:red"><span th:if="${#fields.hasErrors('name')}" th:errors="*{name}" /></td>
+    </tr>
+    <tr>
+      <td>Description</label></td>
+      <td><input type="text" th:field="*{description}" name="title"/></td>
+      <td style="color:red"><span th:if="${#fields.hasErrors('description')}" th:errors="*{description}" /></td>
+    </tr>
+    <tr>
+      <td>Buy Price</label></td>
+      <td><input type="text" th:field="*{buyPrice}" name="title"/></td>
+      <td style="color:red"><span th:if="${#fields.hasErrors('buyPrice')}" th:errors="*{buyPrice}" /></td>
+    </tr>
+    <tr>
+      <td>Sell Price</label></td>
+      <td><input type="text" th:field="*{sellPrice}" name="title"/></td>
+      <td style="color:red"><span th:if="${#fields.hasErrors('sellPrice')}" th:errors="*{sellPrice}" /></td>
+    </tr>
+
+    <tr>
+      <td>Quantity In Stock</label></td>
+      <td><input type="text" th:field="*{quantityInStock}" name="title"/></td>
+      <td style="color:red"><span th:if="${#fields.hasErrors('quantityInStock')}" th:errors="*{quantityInStock}" /></td>
+    </tr>
+    <tr>
+      <td><input type="submit" value="Add Product"/></td>
+    </tr>
+  </table>
+</form>
+</body>
+</html>
